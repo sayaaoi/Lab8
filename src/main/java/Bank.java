@@ -15,6 +15,13 @@ public class Bank {
     private String bankName;
 
     /**
+     * @param name the bankName to set
+     */
+    public void setBankName(final String name) {
+        this.bankName = name;
+    }
+
+    /**
      * Instance variable. The number of bank accounts.
      */
     private static int numberOfAccount;
@@ -61,6 +68,7 @@ public class Bank {
         /*
          * Implement this function
          */
+        bankAccount.setAccountBalance(bankAccount.getAccountBalance() + amount);
         return true;
     }
 
@@ -81,7 +89,7 @@ public class Bank {
         /*
          * Implement this function
          */
-        if (destination.getAccountBalance() < 0) {
+        if (destination.getAccountBalance() < amount) {
             return false;
         } else {
             return true;
@@ -106,6 +114,20 @@ public class Bank {
      * total account of bank accounts.
      */
     private static int totalAccounts = 0;
+
+    /**
+     * @return the totalAccounts
+     */
+    public static int getTotalAccounts() {
+        return totalAccounts;
+    }
+
+    /**
+     * @param totalAccount the totalAccounts to set
+     */
+    public static void setTotalAccounts(final int totalAccount) {
+        Bank.totalAccounts = totalAccount;
+    }
     /**
      * Uses static variable to get number of bank accounts opened.
      *

@@ -58,9 +58,9 @@ public class BankAccount {
         /*
          * Implement this function
          */
-        this.accountNumber = (int) Math.random();
         this.ownerName = name;
         this.accountType = accountCategory;
+        Bank.setTotalAccounts(Bank.getNumberOfAccount() + 1);
 
     }
 
@@ -129,15 +129,6 @@ public class BankAccount {
      */
     public void setInterestRate(final double rate) {
         this.interestRate = rate;
-    }
-
-    /**
-     * Get bank account type.
-     * @return account type.
-     */
-
-    public BankAccountType getAccountType() {
-        return accountType;
     }
 
 }
